@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title style="font-family: fontfarsi;">سوال ساز</title>
+        <link rel="stylesheet" href="css.css">        
+        <script type="text/javascript" src="/eel.js"></script>
+        <script type="text/javascript" src="main.js"></script>
+        <link rel="icon" href="icon.png">
+    </head>
+    <body class="body">
+
+        <div class="body">
+        <div style="background-image: url('img/school\ supplies.jpg'); width: 100%;
+        height: 200px; background-size: 700px; background-repeat: no-repeat; background-color: rgb(222, 238, 248);
+        background-position: center; filter: blur(2px); 
+        box-shadow: 0 0 40px white;"></div>
+
+
+            <img src="img/png1.png" alt="" style="margin-left: 45%; width: 10% ;  margin-top: 40px;" >
+            <p class="titalup">برای ازمون ها سوالات رندوم بساز</p>
+
+            <button class="button" onclick="alert('ساخته شده توسط تیم صفر و یک که تشکیل شده از اقایان علیرضا فرقدانی و محمد مدبر')"> درباره برنامه نویس و سازنده</button>
+
+<!--                ------------------------                    -->
+
+<p class="titalup" style="margin-top: 200px;">درباره نرم افزار</p>
+<p class="deftext">
+نرم افزار ما بستری را اماده کرده که
+<br>
+شما می توانید به راحتی و دادن سوالات 
+<br>
+به مقدار زیادی ورقه امتحان با سوالات مختلف 
+<br>
+و کاملا رندم داشته باشید
+<br>
+امید وارم به خوبی از این نرم افزار استفاده کنید
+</p>
+
+<hr style="margin-top: 250px; opacity: 0.8; box-shadow: 0 -10px 10px rgba(255, 255, 255, 0.719); z-index: 2; padding-bottom: 10px; border: 0;">
+
+        <div>
+            <textarea name="paragraph_text" style="width: 98.5%; height: 300px;
+            left: 50%;  transform: translate(0.4%); border-radius: 6px;  font-family: fontfarsi;
+            font-size: 17px; text-align: right; margin-bottom: 10px; background-color: rgb(229, 209, 248); border: 0;" 
+            placeholder="سوالات را به صورت تک به تک در این کادر بنویسید و روی گزینه سوال بعدی کلیک کنید"
+            id="textq"></textarea>
+
+            <button class="donebutt" style="margin-top: -5px; margin-bottom: 10px; width: 50%; 
+            margin-left: 25%; border-radius: 10px;" onclick="nextq()" >سوال بعدی</button>
+
+            <p style="font-family: fontfarsi; font-size: 20px; letter-spacing: 1px; 
+            text-align: right; padding-right: 10px;" id="numqforadd"> 0 :تعداد سوالات اضافه شده</p>
+
+            <input type="number" placeholder="تعداد سوالاتی که باید توی هر امتحان باشد"
+            style="width: 98.5%; height: 20px;
+            left: 50%;  transform: translate(0.4%); border-radius: 3px;  font-family: fontfarsi;
+            font-size: 17px; text-align: right; margin-bottom: 30px; background-color: rgb(229, 209, 248);border: 0;
+             " id="numqss" >
+
+<input type="number" placeholder="تعداد ازمون ها"
+style="width: 98.5%; height: 20px;
+left: 50%;  transform: translate(0.4%); border-radius: 3px;  font-family: fontfarsi;
+font-size: 17px; text-align: right; margin-bottom: 30px; background-color: rgb(229, 209, 248);border: 0;
+ " id="numqssfile" >
+
+
+<input type="text" placeholder="نام فایل"
+style="width: 98.5%; height: 20px;
+left: 50%;  transform: translate(0.4%); border-radius: 3px;  font-family: fontfarsi;
+font-size: 17px; text-align: right; margin-bottom: 30px; background-color: rgb(229, 209, 248);border: 0;
+ " id="namef">
+
+
+<input type="text" placeholder="ادرس فایل"
+style="width: 98.5%; height: 20px;
+left: 50%;  transform: translate(0.4%); border-radius: 3px;  font-family: fontfarsi;
+font-size: 17px; text-align: right; margin-bottom: 30px; background-color: rgb(229, 209, 248);border: 0;
+ " id="adr">
+
+<input type="text" placeholder="word ادرس فایل زمینه"
+style="width: 98.5%; height: 20px;
+left: 50%;  transform: translate(0.4%); border-radius: 3px;  font-family: fontfarsi;
+font-size: 17px; text-align: right; margin-bottom: 30px; background-color: rgb(229, 209, 248);border: 0;
+ " id="filebaseword">
+
+
+
+            <button class="donebutt" onclick="readq()" >ایجاد سوالات</button>
+        </div>
+
+
+
+        </div>
+    </body>
+</html>
