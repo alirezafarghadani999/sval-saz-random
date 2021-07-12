@@ -12,7 +12,8 @@ function readq(){
      eel.gettext(nextqs,numqst,numqstf,namef,adr,filebaseword)
  }
 
- function nextq(){
+
+function nextq(){
      
     var qst = document.getElementById("textq").value
     if (qst==""){
