@@ -2,7 +2,7 @@
 سوال ساز رندم 
 
 سایت برای دانلود اپ
-sovalsaz.gigfa.com
+https://sovalsaz.gigfa.com
 
 ایمیل سرگروه تیم و سازنده
 alirezaf999.iran@gmail.com
