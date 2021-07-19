@@ -1,20 +1,61 @@
 nextqs = "" ;
-numqforadd = 0;
+numqforadd = 0;     
+checkboxwordpdfinput = false 
 
 function readq(){
 
      var numqst = document.getElementById("numqss").value
      var numqstf = document.getElementById("numqssfile").value
      var namef = document.getElementById("namef").value
-     var adr = document.getElementById("adr").value
-     var filebaseword = document.getElementById("filebaseword").value
 
-     eel.gettext(nextqs,numqst,numqstf,namef,adr,filebaseword)
+
+
+     eel.gettext(nextqs,numqst,numqstf,namef)
  }
 
+function zaminefile() {
+    eel.zaminefile()
+}
+
+function filesavefolder() {
+    eel.filesavefolder()
+}
+
+function pdf_word_input()
+{
+    eel.pdf_word_input()
+}
+
+function checkpdf(){
+    var hideandshow = document.getElementById("btnnextq")
+    if(document.getElementById("vehicle1").checked == true){
+
+        document.getElementById("textq").style.display = "none";
+    hideandshow.style.display = "none";
+    document.getElementById("numqforadd").innerHTML = "pdf درحال استفاده از قابلیت افضودن سوال با فایل ";
+    document.getElementById("pdf_wordinput").style.display = "block";
+    document.getElementById("textforpdfword").innerText = "گذاشته شود <next> برای جدا کردن سوالات کافی هست بین هر سوال نشانه "
+    checkboxwordpdfinput = true;
+    eel.checkboxwordpdfinput(checkboxwordpdfinput);
+
+}
+
+    if(document.getElementById("vehicle1").checked == false){
+        document.getElementById("textq").style.display = "block";
+        hideandshow.style.display = "block";
+        document.getElementById("numqforadd").innerHTML = " تعداد سوالات اضافه شده: " + numqforadd;
+    document.getElementById("pdf_wordinput").style.display = "none";
+    document.getElementById("textforpdfword").innerText = ""
+
+        checkboxwordpdfinput = false;
+        eel.checkboxwordpdfinput(checkboxwordpdfinput);
+    }
+
+}
 
 function nextq(){
-     
+
+
     var qst = document.getElementById("textq").value
     if (qst==""){
         alert("شما چیزی تایپ نکردید")

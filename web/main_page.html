@@ -52,9 +52,29 @@
             font-size: 17px; text-align: right; margin-bottom: 10px; background-color: rgb(229, 209, 248); border: 0;" 
             placeholder="سوالات را به صورت تک به تک در این کادر بنویسید و روی گزینه سوال بعدی کلیک کنید"
             id="textq"></textarea>
+            
+            <div style="width: 100% ; text-align: right;">
+            <input type="checkbox" id="vehicle1" name="vehicle1" onclick="checkpdf()">
+            <label for="vehicle1" style="margin-right: 10px; font-family: fontfarsi; 
+            margin-bottom: 10px;">ورودی سوالات از طریق فایل پی دی اف</label><br>
+            </div>
+            <div style="width: 100% ; text-align: right;">
 
-            <button class="donebutt" style="margin-top: -5px; margin-bottom: 10px; width: 50%; 
-            margin-left: 25%; border-radius: 10px;" onclick="nextq()" >سوال بعدی</button>
+                <label style="margin-right: 5px; font-family: fontfarsi; text-align: right; 
+                margin-bottom: 10px; width: 100%; margin-top: 5px; letter-spacing: 2px;" id="textforpdfword"></label>
+                </div>
+       
+
+        <button
+        style="display: none; width: 99%; height: 25px;
+        left: 50%;  transform: translate(0.4%); border-radius: 3px;  font-family: fontfarsi;
+        font-size: 17px; text-align: right; margin-bottom: 30px; background-color: rgb(229, 209, 248);border: 0;
+        color: rgb(117, 117, 117); text-align: center; margin-top:10px;" id="pdf_wordinput"
+         onclick="pdf_word_input()"> word , pdf وارد کردن سوالات از طریق فایل  </button>
+
+
+            <button class="donebutt" style="margin-top: 10px; margin-bottom: 10px; width: 50%; 
+            margin-left: 25%; border-radius: 10px;" onclick="nextq()"  id="btnnextq">سوال بعدی</button>
 
 
             <p style="font-family: fontfarsi; font-size: 20px; letter-spacing: 1px; 
@@ -79,18 +99,19 @@ left: 50%;  transform: translate(0.4%); border-radius: 3px;  font-family: fontfa
 font-size: 17px; text-align: right; margin-bottom: 30px; background-color: rgb(229, 209, 248);border: 0;
  " id="namef">
 
-
-<input type="text" placeholder="ادرس فایل"
-style="width: 98.5%; height: 20px;
+<button
+style="width: 99%; height: 25px;
 left: 50%;  transform: translate(0.4%); border-radius: 3px;  font-family: fontfarsi;
 font-size: 17px; text-align: right; margin-bottom: 30px; background-color: rgb(229, 209, 248);border: 0;
- " id="adr">
+ color: rgb(117, 117, 117); text-align: center;"
+  onclick="filesavefolder()"> انتخاب محل ذخیره</button>
 
-<input type="text" placeholder="word ادرس فایل زمینه"
-style="width: 98.5%; height: 20px;
+<button
+style="width: 99%; height: 25px;
 left: 50%;  transform: translate(0.4%); border-radius: 3px;  font-family: fontfarsi;
 font-size: 17px; text-align: right; margin-bottom: 30px; background-color: rgb(229, 209, 248);border: 0;
- " id="filebaseword">
+ color: rgb(117, 117, 117); text-align: center;"
+  onclick="zaminefile()"> انتخاب فایل زمینه</button>
 
 
 
