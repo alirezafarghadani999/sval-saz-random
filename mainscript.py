@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from logging import fatal
 import eel
 from random import choice
 import docx
@@ -10,7 +11,6 @@ import tkinter as tk
 from tkinter import filedialog
 
 
-
 intdocx = 1
 myqs = docx.Document()
 qstring = ""
@@ -18,6 +18,7 @@ zaminefiles= ""
 adr = ""
 boolforcheckpdfword = False
 pdf_word_input = ""
+lastqusetf = False
 
 #----------------- pdf reader -----------------------
 # pdfread = ""
@@ -112,7 +113,18 @@ def gettext(nextqs,numqst,numqsf,namef):
     except IOError:
         print('There was an error opening the file!')
         return
-        
+
+    
+    if (lastqusetf):
+        lastQsaveR =open("lastQ.data", encoding="utf-8")
+        nextqs = lastQsaveR.read()
+        lastQsaveR.close()
+
+    lastQsave =open("lastQ.data", "w" , encoding="utf-8")
+    lastQsave.write(nextqs)
+    lastQsave.close()
+
+
     qsnum = int(numqst)-1
     lisnumwhile = -1
     files = 1
@@ -215,5 +227,27 @@ def pdf_word_input():
     filetypes=[('سوالات word فایل ', '.docx'),('سوالات pdf فایل ', '.pdf')])
 
 
+@eel.expose
+def lastquse(checklastquse):
+    global lastqusetf
+    nums = 0
+    if(checklastquse == False):
+        lastqusetf = False
+
+    if(checklastquse == True):
+        lastqusetf= True
+        lastQsaveR =open("lastQ.data", encoding="utf-8")
+        nextqs = lastQsaveR.read()
+        lastQsaveR.close()
+        nsplit = nextqs.split("<__>nextq<__>")
+        for numt in nsplit:
+            nums = nums +1
+        eel.numberforlastq(nums-1)
+
+    
+
+
 eel.init('web')
 eel.start('main_page.html' , size=(700,500) )  # Start
+
+                             
