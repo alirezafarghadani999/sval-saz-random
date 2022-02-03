@@ -1,0 +1,228 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-shadow: border-box;
+    font-family:fontfarsi;
+
+}
+body{
+
+    min-height: 100vh;
+    background: #0e1538 ;
+
+    
+}
+.boxes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.boxes h2{
+    color: #fff;
+    position: absolute;
+    right: 5px ;
+    font-weight: 100;
+    font-size: 20px;
+    letter-spacing: 2px;
+
+}
+.box{
+    position: relative;
+    width: 80%;
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0,0.5);
+    overflow: hidden;
+    border-radius: 5px;
+
+
+}
+
+.box.active::before{
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 50%;
+    background: linear-gradient(#00ccff , #d400d4);
+    animation: anim 4s linear infinite;
+
+}
+.box::after{
+    content: '';
+    position: absolute;
+    inset: 4px;
+    background: #0e1538;
+    border-radius: 5px;
+}
+.box textarea{
+    color: #fff;
+    position: relative;
+    z-index: 10;
+    box-sizing: border-box;
+    width: calc(100% - 20px);
+    border-radius: 5px;
+    background-color: transparent;
+    resize: vertical;
+    min-height: 200px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    outline: none;
+    border: none;
+    font-size: 15px;
+    text-align: right;
+    direction: rtl;
+}
+@keyframes anim {
+
+    0%{
+        transform: rotate(0deg);
+    }
+    
+    100%{
+        transform: rotate(360deg);
+    }
+    
+}
+
+.menu{
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 0;
+    bottom: -50px;
+    z-index: 100000;
+}
+.menu li{
+    position: absolute;
+    left: 0;
+    list-style: none;
+    transform-origin: 100px;
+    transition: 0.5s;
+    transition-delay: calc(0.1s * var(--i));
+    transform: rotate(0deg) translateX(80px);
+    z-index: 100000;
+}
+.menu li a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 50%;
+    transform: rotate(calc(360deg / -8 * var(--i)));
+    box-shadow: 0 3px 4px rgba(0, 0, 0,0.15);
+    transition: 0.5s;
+    z-index: 100000;
+
+}
+.menu li:hover a {
+    transform: rotate(calc(360deg / -8 * var(--i))) scale(1.5);
+}
+.menu li a img{
+    width: 25px;
+    height: 25px;
+    display: block;
+
+}
+.menu.active li {
+    transform: rotate(calc(360deg / 8 * var(--i)));
+
+}
+.toggle{
+    position:absolute;
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000000;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 3px 4px rgba(0, 0, 0,0.15);
+    transition: transform 1.25s;
+
+}
+
+.menu.active .toggle{
+
+    transform: rotate(315deg);
+
+}
+
+.menu img{
+    width: 40px;
+    height: 40px;
+    display: block;
+
+}
+
+.display {
+    width: calc(99% - 40px);
+    height: auto;
+    position: relative;
+    text-align: right;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    color: rgb(0, 0, 0);
+    border: 1px black solid;
+    left: 50%;
+    transform: translate(-50%,0);
+    background-color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 3px;
+    padding: 20px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+::-webkit-scrollbar {
+    width: 2px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #0e1538;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(#00ccff , #d400d4);
+    border-radius: 5px;
+  }
+
+  ::-moz-selection { /* Code for Firefox */
+    color: white;
+    background: #00ccff60  ;
+    text-shadow: 0 0 5px;
+    padding: 10px;
+  }
+  
+  ::selection {
+    color: white;
+    background: #00ccff60  ;
+    text-shadow: 0 0 5px;
+    padding: 10px;
+    
+  }
+  @font-face {
+    font-family: fontfarsi;
+    src: url(Lalezar.woff);
+  }
+
+#inputqs{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+  
+  

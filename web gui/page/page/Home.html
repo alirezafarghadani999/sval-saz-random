@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="publicss.css">
+<body>
+    <img src="img/Homepage.png" alt="!!" class="bg">
+   <div class="cen"> 
+<div class="boxhome">
+<h3>مشکل اتصال</h3>
+
+<p>برای دریافت اخرین اخبار و اطلاعات مهم درمورد برنامه به اینترنت متصل شوید</p>
+</div>
+<div class="boxhome">
+    <h3>مشکل اتصال</h3>
+
+    <p>برای دریافت اخرین اخبار و اطلاعات مهم درمورد برنامه به اینترنت متصل شوید</p>
+</div>
+<div class="boxhome">
+    <h3>مشکل اتصال</h3>
+
+    <p>برای دریافت اخرین اخبار و اطلاعات مهم درمورد برنامه به اینترنت متصل شوید</p>
+</div>
+</div>
+</body>
+
+<script type="text/javascript" src="/eel.js"></script>
+<script>
+
+window.onload = async function data_server() {
+    
+  let data = await eel.getdata_server_home()();
+  document.querySelectorAll("h3")[0].innerHTML = data[0].split("<TX>")[0]
+  document.querySelectorAll("h3")[1].innerHTML = data[1].split("<TX>")[0]
+  document.querySelectorAll("h3")[2].innerHTML = data[2].split("<TX>")[0]
+
+  document.querySelectorAll("p")[0].innerHTML = data[0].split("<TX>")[1]
+  document.querySelectorAll("p")[1].innerHTML = data[1].split("<TX>")[1]
+  document.querySelectorAll("p")[2].innerHTML = data[2].split("<TX>")[1]
+  
+  
+
+
+
+
+    }
+</script>

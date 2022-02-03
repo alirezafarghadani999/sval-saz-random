@@ -1,0 +1,167 @@
+:root{
+    --bgcolormenu:#fff;
+    --bgcolor:rgb(24, 24, 24);
+}
+
+#menu{
+    position: fixed;
+    width: 400px;
+    height: 70px;
+    background-color: var(--bgcolormenu);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding-top: 10px;
+    bottom: 10px;
+    padding-left: 30px;
+    left: 50%;
+    transform: translate(-50%,0) ;
+    transition: 0.5s;
+    box-shadow: 0;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
+    
+}
+
+#menu:hover{
+    box-shadow: 0 80px 100px rgba(0, 0, 0, 0.527);
+    bottom: 15px;
+
+}
+
+#menu ul{
+    display: flex;
+    width: 350px;
+}
+#menu ul li{
+position: relative;
+list-style: none;
+width: 70px;
+height: 70px;
+z-index: 1;
+}
+#menu ul li a{
+    position: relative;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    font-family:fontfarsi ;
+
+    
+}
+#menu ul li a .icon{
+position: relative;
+display: block;
+line-height: 75px;
+width: 40px;
+height: 40px;
+transition: 0.5s;
+}
+#menu ul li a .icon img{
+
+    width: 45px;
+    height: 45px;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    
+}
+#menu ul li.actived a .icon img{
+
+    transform: translateX(3px) translateY(3px);
+
+}
+#menu ul li.actived a .icon{
+
+transform: translateY(-35px);
+
+}
+
+#menu ul li a .text{
+position: absolute;
+top: 30%;
+color: var(--bgcolor);
+opacity: 0;
+transition: 0.5s;
+}
+
+
+#menu ul li.actived a .text{
+    opacity: 1;
+transform: translateY(20px) translateX(5px);
+
+}
+
+.selected{
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background-color:#29fd5300 ;
+    backdrop-filter: blur(150px);
+    top: -50%;
+    border-radius: 50%;
+    border:6px var(--bgcolor) solid;
+    transition: 0.7s;
+    
+}
+
+.selected::before{
+content: '';
+position: absolute;
+top: 0;
+width: 20px;
+height: 20px;
+background:transparent;
+top: 34px;
+left: -21px;
+border-top-right-radius: 20px;
+box-shadow: 0 -10px 0 0 var(--bgcolor);
+transition: 1s;
+
+}
+.selected::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background:transparent;
+    top: 34px;
+    left: 71px;
+    border-top-left-radius: 20px;
+    box-shadow: 0 -10px 0 0 var(--bgcolor);
+    transition: 1s;
+
+}
+
+#menu ul li:nth-child(1).actived ~ .selected{
+        transform: translateX(calc(70px*0));
+        --bgcolor:brown;
+}
+#menu ul li:nth-child(2).actived ~ .selected{
+    transform: translateX(calc(70px*1));
+    --bgcolor:slategray;
+}
+#menu ul li:nth-child(3).actived ~ .selected{
+    transform: translateX(calc(70px*2));
+    --bgcolor:rgb(200, 219, 223);
+}
+#menu ul li:nth-child(4).actived ~ .selected{
+transform: translateX(calc(70px*3));
+--bgcolor:darkslateblue;
+}
+
+@font-face {
+    font-family: fontfarsi;
+    src: url(Lalezar.woff);
+  }

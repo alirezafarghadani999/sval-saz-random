@@ -1,0 +1,275 @@
+<link rel="stylesheet" href="publicss.css">
+
+<div id="menusetting">
+
+    <ul>
+        <li class="list actived">
+            <a href="#" onclick="appseting()">
+                <span class="img"><img src="icon/icons8-puzzle-50.png" alt="!!"></span>
+                <span class="text">افزونه</span>
+            </a>
+        </li>
+        <li class="list">
+            <a href="#" onclick="qssetting()">
+                <span class="img"><img src="icon/icons8-export-50.png" alt="!!"></span>
+                <span class="text">خروجی</span>
+            </a>
+        </li>
+        <div class="selectedsetting"></div>
+
+    </ul>
+</div>
+
+
+
+
+<div id="qutput">
+    <div style="margin-left: 60px; width: calc(100%-60px); height: 250px; display: flex; margin-top: 2%;">
+
+        <div style="display: flex; overflow-y:scroll; overflow-y: hidden; width: 100%; height: 250px; justify-content: center; 
+">
+
+            <div id="qsoutput" style="display: flex; ">
+
+
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+
+    <div id="settingoutput">
+
+        <div style="width: 70%;">
+        <p id="howmuchqs"> : تعداد سوالات شناسایی شده</p>
+        <input type="number" id="numfile" placeholder="تعداد ورقه خروجی">
+        <br>
+        <input type="number" id="numqs" placeholder="تعداد سوالات در هر ورقه">
+        <br>
+        <input type="text" id="names" spellcheck="false" autocomplete="off" placeholder="نام فایل خروجی">
+        <br>
+        <button onclick="savesrc()">انتخاب محل ذخیره سازی</button>
+        <button onclick="sarbarg()">انتخاب فایل سربرگ</button>
+        <br>
+        <br>
+        <Button onclick="get_output()">خروجی بگیر</Button>
+
+    </div>
+
+    </div>
+
+</div>
+
+<style>
+
+    .activedqs{
+        border: 3px rgb(82, 194, 228) solid;
+    }
+
+#settingoutput {
+    display: flex;
+    justify-content: center;
+    width: calc( 100% - 60px );
+    position: absolute;
+    right: 0;
+}
+#settingoutput p{
+       font-family: fontfarsi;
+        font-size: 19px;
+        text-align: right;
+        color: rgb(87, 87, 87);
+        letter-spacing: 1px;
+}
+#settingoutput button {
+    width: 100%;
+    margin-top: 10px;
+    height: 30px;
+    font-family: fontfarsi;
+        font-size: 17px;
+    background-color: white;
+    border: 1px rgb(138, 138, 138) solid;
+    transition: 0.5s;
+    border-radius: 4px;
+}
+
+#settingoutput button:hover {
+    background-color: rgb(231, 231, 231);
+    letter-spacing: 2px;
+}
+#settingoutput input:hover {
+    background-color: rgb(231, 231, 231);
+    letter-spacing: 2px;
+    
+}
+
+
+    #settingoutput input{
+        right: 0;
+        text-align: right;
+        width:100%;
+        margin-top: 10px;
+        height: 30px;
+        font-family: fontfarsi;
+        font-size: 17px;
+        outline: none;
+        transition: 0.5s;
+    border: 1px rgb(138, 138, 138) solid;
+    border-radius: 4px;
+
+
+
+    }
+
+    .boxqslist {
+        min-width: 100px;
+        min-height: 100px;
+        padding: 10px;
+        width: 100px;
+        height: 100px;
+        background-color: rgb(243, 243, 243);
+        border-radius: 4px;
+        margin: 10px;
+        margin-right: -5px;
+        box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+            rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+            rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+        font-family: fontfarsi;
+        display: flex;
+        transition: 0.5s;
+        z-index: 10000;
+
+
+    }
+
+    .boxqslist div {
+        transition: 0.5s;
+        font-size: 20px;
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        max-height: 100%;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+
+    .boxqslist:hover div {
+        color: rgb(73, 73, 73);
+    }
+
+    .boxqslist:hover {
+        box-shadow: rgba(255, 255, 255, 0.3) 0px 1px 1px 0px inset,
+            rgba(50, 50, 93, 0.45) 0px 50px 100px -20px,
+            rgba(0, 0, 0, 0.5) 0px 30px 60px -30px;
+    }
+
+    /* width */
+    ::-webkit-scrollbar {
+        height: 8px;
+        width: 100%;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: #888;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+</style>
+
+
+
+
+<div id="settingapp">
+
+    <div style="margin-left: 60px; width: calc(100%-60px); height: 250px; display: flex; justify-content: center; margin-top: 2%;">
+        
+<div class="boxData">
+<div class="data">Years:Month:day</div>
+</div>
+
+<div class="boxclock">
+    <div class="clock">
+        <div class="hour">
+            <div class="hr" id="hr"></div>
+        </div> 
+        
+        <div class="min">
+            <div class="mn" id="mn"></div>
+        </div> 
+        
+        <div class="sec">
+            <div class="sc" id="sc"></div>
+        </div> 
+    </div>
+</div>
+
+
+</div>
+
+</div>
+
+<script type="text/javascript" src="/eel.js"></script>
+<script src="setting.js"></script>
+<script src="data.js"></script>
+<script type="text/javascript">
+
+
+    document.getElementById("qutput").style.marginLeft = "-100%" ;
+
+
+    const list = document.querySelectorAll('.list');
+    function activatelink() {
+        list.forEach((item) =>
+            item.classList.remove("actived"));
+        this.classList.add("actived");
+    }
+    list.forEach((item) =>
+        item.addEventListener('click', activatelink));
+
+    function appseting() {
+        document.getElementById("settingapp").style.marginLeft = "0";
+        document.getElementById("qutput").style.marginLeft = "-100%";
+
+    }
+
+
+    function qssetting() {
+        document.getElementById("qutput").style.marginLeft = "0";
+        document.getElementById("settingapp").style.marginLeft = "-100%";
+
+    }
+    // clock
+
+    const deg = 6;
+    const hr = document.querySelector("#hr");
+    const mn = document.querySelector("#mn");
+    const sc = document.querySelector("#sc");
+    const data = document.querySelector(".data");
+
+    setInterval(() => {
+        const d = new Date();
+        let hh = d.getHours() * 30;
+        let mm = d.getMinutes() * deg;
+        let ss = d.getSeconds() * deg;
+        hr.style.transform = `rotateZ(${hh + (mm / 12)}deg)`;
+        mn.style.transform = `rotateZ(${mm}deg)`;
+        sc.style.transform = `rotateZ(${ss}deg)`;
+        data.innerHTML = `${d.getFullYear()}/${d.getMonth()}/${d.getDay()}<br>${getPersianDate("y/m/d")}<br>${getPersianDate()}`;
+
+
+    })
+
+
+</script>
